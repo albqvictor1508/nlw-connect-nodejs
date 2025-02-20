@@ -1,8 +1,9 @@
 import {fastify} from "fastify"
 import {fastifyCors} from "@fastify/cors"
-import {validatorCompiler, serializerCompiler} from "fastify-type-provider-zod"
+import {validatorCompiler, serializerCompiler, ZodTypeProvider} from "fastify-type-provider-zod"
+import z from "zod";
 
-const app = fastify();
+const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.register(fastifyCors)
 
@@ -11,10 +12,18 @@ app.setValidatorCompiler(validatorCompiler);
 
 app.post("/api/subscriptions", {
     schema: {
-
+        body: z.object({
+            name: z.string(),
+            email: z.string().email(),
+        }),
+        response: {
+            201: z.object({
+                msg: z.string()
+            })
+        }
     }
-}, () => {
-    return "Hello World"
+}, (request, reply) => {
+    reply.status(201).send({msg: "user created!"});
 })
 
 app.listen({port: 3333}).then(() => {
