@@ -4,6 +4,9 @@ import z from "zod";
 export const subscribeToEventRoute: FastifyPluginAsyncZod = async (app) => {
     app.post("/api/subscriptions", {
         schema: {
+            summary: "subscribers someone to the event",
+            tags: ["subscription"],
+            description: "msr msr msr",
             body: z.object({
                 name: z.string(),
                 email: z.string().email(),
