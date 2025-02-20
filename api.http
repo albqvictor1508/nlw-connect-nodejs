@@ -2,12 +2,13 @@ POST http://localhost:3333/api/subscriptions
 Content-Type: application/json
 
 {
-  "name": "lexa martins",
-  "email": "lexsa.martins@icloud.com"
+  "name": "vito indicado",
+  "email": "indicado@icloud.com",
+  "referrer": "85751efe-5b19-4598-a4fd-69083cac1d9c"
 }
 
 ### 
-GET http://localhost:3333/invites/:id
+GET http://localhost:3333/api/invites/85751efe-5b19-4598-a4fd-69083cac1d9c
 
 ### 
-GET http://localhost:3333/:id/ranking/clicks
+GET http://localhost:3333/api/subscribers/85751efe-5b19-4598-a4fd-69083cac1d9c/ranking/clicks
