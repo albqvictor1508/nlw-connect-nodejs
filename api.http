@@ -1,0 +1,13 @@
+POST http://localhost:3333/api/subscriptions
+Content-Type: application/json
+
+{
+  "name": "lexa martins",
+  "email": "lexsa.martins@icloud.com"
+}
+
+### 
+GET http://localhost:3333/invites/:id
+
+### 
+GET http://localhost:3333/:id/ranking/clicks
