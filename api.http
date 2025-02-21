@@ -13,3 +13,5 @@ GET http://localhost:3333/api/subscribers/730ff8f2-68e2-4f90-8d27-2271f9f6c977/r
 
 ### 
 GET http://localhost:3333/api/subscribers/730ff8f2-68e2-4f90-8d27-2271f9f6c977/ranking/position
+
+GET http://localhost:3333/api/ranking
