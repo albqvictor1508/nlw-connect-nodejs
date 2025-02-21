@@ -28,5 +28,7 @@ export async function getRanking() {
 			return sub2.score - sub1.score;
 		});
 
+		console.log(rankingWithScore);
+
 	return { ranking: rankingWithScore };
 }
